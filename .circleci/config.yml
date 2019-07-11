@@ -10,10 +10,10 @@ jobs:
           command: docker-compose -f dev-docker-compose.yml build
       - run:
           name: "Test front"
-          command: dev-docker-compose run --rm -e CI=true client yarn run -s test
+          command: docker-compose run --rm -e CI=true client yarn run -s test
       - run:
           name: "Test cypress"
-          command: dev-docker-compose run --rm -e CI=true client yarn run cy:run
+          command: docker-compose run --rm -e CI=true client yarn run cy:run
   # test:
   #   steps:
   #     - checkout
