@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: 
           name: "Build development images"
-          command: docker-compose -f dev-docker-compose build
+          command: docker-compose -f dev-docker-compose.yml build
       - run:
           name: "Test front"
           command: dev-docker-compose run --rm -e CI=true client yarn run -s test
