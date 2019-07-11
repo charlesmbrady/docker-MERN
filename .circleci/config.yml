@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: cd client && yarn
-      - run: yarn build
+      - run: cd client && yarn build
   # test:
   #   steps:
   #     - checkout
