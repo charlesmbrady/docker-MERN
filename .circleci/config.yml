@@ -14,7 +14,7 @@ jobs:
           when: on_success
       - run:
           name: "Test cypress"
-          command: docker-compose run --rm -e CI=true client yarn run cy:run
+          command: docker-compose run --rm -e CI=true client npm run cy:run
     
   # test:
   #   steps:
