@@ -4,7 +4,7 @@ import './App.css';
 import API from './apis';
 
 function App() {
-  const [checks, setChecks] = useState(['no checks']);
+  const [checks] = useState(['no checks']);
 
   useEffect( () => {
     API.getChecks()
