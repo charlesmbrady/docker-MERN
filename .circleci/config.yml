@@ -13,6 +13,8 @@ jobs:
   #     - run: yarn
   #     - run: yarn test
   cypress:
+    docker:
+      - image: circleci/node:10.15
     steps:
       - checkout
       - run: docker-compose -f dev-docker-compose.yml up --build
