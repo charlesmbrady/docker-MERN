@@ -11,7 +11,7 @@ jobs:
           background: true
       - run:
           name: "Test front"
-          command: cd client && yarn run -s test
+          command: cd client && npm run -s test
           when: on_success
       - run:
           name: "Test cypress"
