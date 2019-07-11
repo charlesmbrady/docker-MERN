@@ -9,7 +9,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "xvfb": "^0.2.3"
   },
   "scripts": {
     "docker-start": "docker-compose up -d",
@@ -20,7 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "cy:run":"cypress run",
+    "cy:run": "cypress run",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
