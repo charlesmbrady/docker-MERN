@@ -12,6 +12,11 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
+    "docker-start": "docker-compose up -d",
+    "docker-build": "docker-compose run --rm front npm run build",
+    "docker-test": "npm run -s docker-test:unit",
+    "docker-test:unit": "docker-compose run --rm -e CI=true front npm run -s test",
+    "docker-test:unit:watch": "docker-compose run --rm front npm run -s test",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -6,12 +6,11 @@ jobs:
     steps:
       - checkout
       - run: 
-          name: "Build and start development images"
-          command: docker-compose -f dev-docker-compose.yml up --build
-          background: true
+          name: "Build development images"
+          command: docker-compose build
       - run:
           name: "Test front"
-          command: cd client && npm run -s test
+          command: docker-compose run --rm -e CI=true client npm run -s test
           when: on_success
       - run:
           name: "Test cypress"
