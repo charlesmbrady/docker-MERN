@@ -7,13 +7,13 @@ jobs:
       - checkout
       - run: 
           name: "Build development images"
-          command: dev-docker-compose build
+          command: docker-compose -f dev-docker-compose --build
       - run:
           name: "Test front"
           command: dev-docker-compose run --rm -e CI=true client yarn run -s test
       - run:
           name: "Test cypress"
-          command: docker-compose run --rm -e CI=true client yarn run cy:run
+          command: dev-docker-compose run --rm -e CI=true client yarn run cy:run
   # test:
   #   steps:
   #     - checkout
