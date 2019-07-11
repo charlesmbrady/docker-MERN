@@ -8,13 +8,22 @@ jobs:
       - run: 
           name: "Build development images"
           command: docker-compose build
+      # - run:
+      #     name: "Test front"
+      #     command: docker-compose run --rm -e CI=true client npm run -s test
+      #     when: on_success
+      # - run:
+      #     name: "Test cypress"
+      #     command: docker-compose run --rm -e CI=true client npm run cy:run
+  cypress_test:
+    steps:
+      - checkout
       - run:
-          name: "Test front"
-          command: docker-compose run --rm -e CI=true client npm run -s test
-          when: on_success
+          name: "Build and run development images"
+          command: docker-compose run
       - run:
-          name: "Test cypress"
-          command: docker-compose run --rm -e CI=true client npm run cy:run
+          name: "run cypress tests"
+          command: npm run cy:run
     
   # test:
   #   steps:
