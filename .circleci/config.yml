@@ -22,7 +22,7 @@ jobs:
       - checkout
       - run:
           name: "install docker compose"
-          command: pip install docker-compose
+          command: brew cask install docker-toolbox
       - run: 
           name: "Build development images"
           command: docker-compose build
