@@ -16,13 +16,13 @@ jobs:
       #     name: "Test cypress"
       #     command: docker-compose run --rm -e CI=true client npm run cy:run
   cypress_test:
-    macos:
-      xcode: "10.2.0"
+    machine:
+      image: circleci/classic:201808-01
     steps:
       - checkout
-      - run:
-          name: "install docker compose"
-          command: brew cask install docker
+      # - run:
+      #     name: "install docker compose"
+      #     command: brew cask install docker
       - run: 
           name: "Build development images"
           command: docker-compose build
